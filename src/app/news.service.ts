@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { environment } from 'src/environments/environment';
 import {HttpClient} from '@angular/common/http';
-
+// option to declare the API_URL directly from the environment
 const API_URL = environment.apiUrl;
 const API_KEY = environment.apiKey;
 @Injectable({
@@ -18,6 +18,7 @@ export class NewsService {
     (`${API_URL}/${url}`);
   }
 
+  // HTTP GET Method to retrieve news from the API
   getNotes() {
     return this.http.get('http://localhost:3000/news/');
   }
